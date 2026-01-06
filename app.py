@@ -17,7 +17,7 @@ from flask_cors import CORS
 load_dotenv()
 
 # AssemblyAI configuration
-ASSEMBLYAI_API_KEY = os.getenv("ASSEMBLYAI_API_KEY", "f98e8ed4b27047339a7bd7d310d7998c")
+ASSEMBLYAI_API_KEY = os.getenv("ASSEMBLYAI_API_KEY")
 ASSEMBLYAI_BASE_URL = "https://api.assemblyai.com"
 
 app = Flask(__name__)
