@@ -21,7 +21,8 @@ ASSEMBLYAI_API_KEY = os.getenv("ASSEMBLYAI_API_KEY", "f98e8ed4b27047339a7bd7d310
 ASSEMBLYAI_BASE_URL = "https://api.assemblyai.com"
 
 app = Flask(__name__)
-CORS(app, origins=["*"])  # Allow all origins for development; restrict in production
+# Allow CORS for local dev and production frontend
+CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "https://notesflowai.vercel.app"]}})
 
 
 def extract_video_id(url: str) -> str | None:
